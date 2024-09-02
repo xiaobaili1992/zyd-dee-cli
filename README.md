@@ -7,7 +7,7 @@ npm install -g dee-cli
 ```javascript
 dee-cli create project-name
 // 快速初始化项目
-dee-cli create project-name --template
+dee-cli create project-name --template vue --tool yarn
 ```
 
 ## 3. 启动项目
