@@ -1,0 +1,36 @@
+{
+  "name": "dee-cli",
+  "version": "0.0.1",
+  "type": "module",
+  "description": "dee-cli cli",
+  "main": "index.js",
+  "bin": {
+    "dee-cli": "index.js"
+  },
+  "scripts": {
+    "dev": "unbuild --stub && cd bin && node index.mjs",
+    "build": "unbuild"
+  },
+  "author": "xiaobai.li",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xiaobaili1992/dee-cli.git"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^12.1.0",
+    "fs-extra": "^11.2.0",
+    "minimist": "^1.2.8",
+    "prompts": "^2.4.2",
+    "semver": "^7.6.3",
+    "simple-git": "^3.26.0",
+    "typescript": "^5.5.4"
+  },
+  "devDependencies": {
+    "unbuild": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
