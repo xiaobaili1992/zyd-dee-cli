@@ -20,8 +20,12 @@ const scripts = {
 	dev: "unbuild --stub && cd bin && node index.mjs",
 	build: "unbuild"
 };
-const author = "";
+const author = "xiaobai.li";
 const license = "ISC";
+const repository = {
+	type: "git",
+	url: "https://github.com/xiaobaili1992/zyd-dee-cli.git"
+};
 const dependencies = {
 	chalk: "^5.3.0",
 	commander: "^12.1.0",
@@ -48,6 +52,7 @@ const pkg = {
 	scripts: scripts,
 	author: author,
 	license: license,
+	repository: repository,
 	dependencies: dependencies,
 	devDependencies: devDependencies,
 	engines: engines$1
@@ -102,7 +107,7 @@ const prepare = async () => {
 };
 const registerCommand = () => {
   program.name(name).description("zyd-dee-cli \u662F\u4E00\u4E2A\u5FEB\u901F\u521B\u5EFAreact\u3001vue\u9879\u76EE\u7684\u547D\u4EE4\u884C\u5DE5\u5177").version(version);
-  program.command("create <projectName>").option("--template <templateName>", "\u9009\u62E9\u9879\u76EE\u6A21\u677F").option("--tool <toolName>", "\u9009\u62E9\u5B89\u88C5\u4F9D\u8D56\u5305\u7684\u5DE5\u5177").action(async (projectName, options) => {
+  program.command("create <projectName>").option("--template <templateName>", "\u9009\u62E9\u9879\u76EE\u6846\u67B6").option("--tool <toolName>", "\u9009\u62E9\u5305\u7BA1\u7406\u5DE5\u5177").action(async (projectName, options) => {
     const args = minimist(process.argv)?._?.slice(3);
     if (args.length > 1) {
       logWarning("\u26A0\uFE0F  \u68C0\u6D4B\u5230\u60A8\u8F93\u5165\u4E86\u591A\u4E2A\u9879\u76EE\u540D\u79F0\uFF0C\u5C06\u4EE5\u7B2C\u4E00\u4E2A\u53C2\u6570\u4E3A\u9879\u76EE\u540D\uFF0C\u5C06\u820D\u5F03\u540E\u7EED\u53C2\u6570");
@@ -148,7 +153,7 @@ const userSelectTemplate = async () => {
     {
       type: "select",
       name: "template",
-      message: "\u8BF7\u9009\u62E9\u6A21\u677F",
+      message: "\u8BF7\u9009\u62E9\u6846\u67B6",
       choices: [
         { title: "react", value: "react" },
         { title: "vue", value: "vue" }
@@ -162,11 +167,12 @@ const userSelectTool = async () => {
     {
       type: "select",
       name: "tool",
-      message: "\u8BF7\u9009\u62E9\u5B89\u88C5\u4F9D\u8D56\u5305\u7684\u5DE5\u5177",
+      message: "\u8BF7\u9009\u62E9\u5305\u7BA1\u7406\u5DE5\u5177",
       choices: [
         { title: "npm", value: "npm" },
         { title: "yarn", value: "yarn" },
-        { title: "pnpm", value: "pnpm" }
+        { title: "pnpm", value: "pnpm" },
+        { title: "bun", value: "bun" }
       ]
     }
   ]);

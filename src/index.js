@@ -35,8 +35,8 @@ const registerCommand = () => {
     
   program
     .command('create <projectName>')
-    .option('--template <templateName>', '选择项目模板')
-    .option('--tool <toolName>', '选择安装依赖包的工具')
+    .option('--template <templateName>', '选择项目框架')
+    .option('--tool <toolName>', '选择包管理工具')
     .action(async (projectName, options) => {
       const args = minimist(process.argv)?._?.slice(3);
       if (args.length > 1) {
@@ -88,7 +88,7 @@ const userSelectTemplate = async () => {
     {
       type: 'select',
       name: 'template',
-      message: '请选择模板',
+      message: '请选择框架',
       choices: [
         { title:'react', value:'react' },
         { title: 'vue', value: 'vue' },
@@ -103,11 +103,12 @@ const userSelectTool = async () => {
     {
       type:'select',
       name: 'tool',
-      message: '请选择安装依赖包的工具',
+      message: '请选择包管理工具',
       choices: [
         { title:'npm', value:'npm' },
         { title: 'yarn', value: 'yarn' },
         { title: 'pnpm', value: 'pnpm' },
+        { title: 'bun', value: 'bun' },
       ],
     }
   ]);
