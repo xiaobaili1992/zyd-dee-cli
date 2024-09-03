@@ -1,11 +1,11 @@
 {
-  "name": "dee-cli",
+  "name": "zyd-dee-cli",
   "version": "0.0.1",
   "type": "module",
-  "description": "dee-cli cli",
+  "description": "zyd-dee-cli cli",
   "main": "index.js",
   "bin": {
-    "dee-cli": "index.js"
+    "zyd-dee-cli": "index.js"
   },
   "scripts": {
     "dev": "unbuild --stub && cd bin && node index.mjs",
@@ -15,7 +15,7 @@
   "license": "ISC",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xiaobaili1992/dee-cli.git"
+    "url": "https://github.com/xiaobaili1992/zyd-dee-cli.git"
   },
   "dependencies": {
     "chalk": "^5.3.0",

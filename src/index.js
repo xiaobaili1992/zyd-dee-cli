@@ -30,7 +30,7 @@ const prepare = async () => {
 const registerCommand = () => {
   program
     .name(name)
-    .description('dee-cli 是一个快速创建react、vue项目的命令行工具')
+    .description('zyd-dee-cli 是一个快速创建react、vue项目的命令行工具')
     .version(version);
     
   program

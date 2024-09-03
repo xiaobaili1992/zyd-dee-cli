@@ -8,13 +8,13 @@ import { execSync } from 'child_process';
 import path from 'node:path';
 import chalk from 'chalk';
 
-const name$1 = "dee-cli";
+const name$1 = "zyd-dee-cli";
 const version$1 = "0.0.1";
 const type = "module";
-const description = "dee-cli cli";
+const description = "zyd-dee-cli cli";
 const main = "index.js";
 const bin = {
-	"dee-cli": "index.js"
+	"zyd-dee-cli": "index.js"
 };
 const scripts = {
 	dev: "unbuild --stub && cd bin && node index.mjs",
@@ -101,7 +101,7 @@ const prepare = async () => {
   await checkGlobalUpdate();
 };
 const registerCommand = () => {
-  program.name(name).description("dee-cli \u662F\u4E00\u4E2A\u5FEB\u901F\u521B\u5EFAreact\u3001vue\u9879\u76EE\u7684\u547D\u4EE4\u884C\u5DE5\u5177").version(version);
+  program.name(name).description("zyd-dee-cli \u662F\u4E00\u4E2A\u5FEB\u901F\u521B\u5EFAreact\u3001vue\u9879\u76EE\u7684\u547D\u4EE4\u884C\u5DE5\u5177").version(version);
   program.command("create <projectName>").option("--template <templateName>", "\u9009\u62E9\u9879\u76EE\u6A21\u677F").option("--tool <toolName>", "\u9009\u62E9\u5B89\u88C5\u4F9D\u8D56\u5305\u7684\u5DE5\u5177").action(async (projectName, options) => {
     const args = minimist(process.argv)?._?.slice(3);
     if (args.length > 1) {
